@@ -1,3 +1,15 @@
+const path = require('path');
+
+// Usar o volume persistente para o banco de dados
+const dbPath = process.env.DATABASE_PATH || path.join(__dirname, '..', 'data', 'guiamentos.db');
+
+// No initDatabase(), use:
+async function initDatabase() {
+    db = await open({
+        filename: dbPath,
+        driver: sqlite3.Database
+    });
+
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -213,3 +225,4 @@ async function startServer() {
 }
 
 startServer();
+}
