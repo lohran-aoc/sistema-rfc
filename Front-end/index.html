@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Guiamento - Calculadora de Lucro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rio Football Culture</h1>
+            <p>Calcule automaticamente o lucro</p>
+        </header>
+
+        <div class="guia-container">
+            <!-- Guia 1 -->
+            <div class="card guia-card">
+                <div class="card-header">
+                    <h2>👤 Mariana</h2>
+                </div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <label for="ingresso1">🎫 Ingressos</label>
+                        <input type="number" id="ingresso1" placeholder="R$ 0,00" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="transporte1">🚗 Transporte</label>
+                        <input type="number" id="transporte1" placeholder="R$ 0,00" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="bebida1">🍺 Bebidas</label>
+                        <input type="number" id="bebida1" placeholder="R$ 0,00" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="guiamento1">🎯 Guiamento</label>
+                        <input type="number" id="guiamento1" placeholder="R$ 0,00" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="faturamento1">💰 Faturamento</label>
+                        <input type="number" id="faturamento1" placeholder="R$ 0,00" step="0.01">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Guia 2 -->
+            <div class="card guia-card">
+                <div class="card-header">
+                    <h2>👤 Matheus</h2>
+                </div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <label for="ingresso2">🎫 Ingressos</label>
+                        <input type="number" id="ingresso2" placeholder="R$ 0,00" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="transporte2">🚗 Transporte</label>
+                        <input type="number" id="transporte2" placeholder="R$ 0,00" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="bebida2">🍺 Bebidas</label>
+                        <input type="number" id="bebida2" placeholder="R$ 0,00" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="guiamento2">🎯 Guiamento</label>
+                        <input type="number" id="guiamento2" placeholder="R$ 0,00" step="0.01">
+                    </div>
+                    <div class="input-group">
+                        <label for="faturamento2">💰 Faturamento</label>
+                        <input type="number" id="faturamento2" placeholder="R$ 0,00" step="0.01">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="calcularLucro()">
+                🔄 Calcular Lucro
+            </button>
+            <button class="btn btn-secondary" onclick="limparFormulario()">
+                🧹 Limpar Tudo
+            </button>
+        </div>
+
+        <!-- Resultados -->
+        <div class="resultados" id="resultados" style="display: none;">
+            <div class="card resultados-card">
+                <div class="card-header">
+                    <h2>📈 Resultados</h2>
+                </div>
+                <div class="card-body">
+                    <!-- Guia 1 Resultados -->
+                    <div class="resultado-guia">
+                        <h3>Guia 1</h3>
+                        <div class="resultado-item">
+                            <span>💰 Faturamento:</span>
+                            <strong id="result-faturamento1">R$ 0,00</strong>
+                        </div>
+                        <div class="resultado-item">
+                            <span>📊 Custos Totais:</span>
+                            <strong id="result-custos1">R$ 0,00</strong>
+                        </div>
+                        <div class="resultado-item lucro-item">
+                            <span>✨ Lucro Individual:</span>
+                            <strong id="result-lucro1">R$ 0,00</strong>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <!-- Guia 2 Resultados -->
+                    <div class="resultado-guia">
+                        <h3>Guia 2</h3>
+                        <div class="resultado-item">
+                            <span>💰 Faturamento:</span>
+                            <strong id="result-faturamento2">R$ 0,00</strong>
+                        </div>
+                        <div class="resultado-item">
+                            <span>📊 Custos Totais:</span>
+                            <strong id="result-custos2">R$ 0,00</strong>
+                        </div>
+                        <div class="resultado-item lucro-item">
+                            <span>✨ Lucro Individual:</span>
+                            <strong id="result-lucro2">R$ 0,00</strong>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <!-- Total -->
+                    <div class="resultado-total">
+                        <h3>📊 Resumo Final</h3>
+                        <div class="resultado-item">
+                            <span>🏢 Lucro Total da Empresa:</span>
+                            <strong id="result-lucro-total">R$ 0,00</strong>
+                        </div>
+                        <div class="resultado-item">
+                            <span>👥 Lucro para Cada Guia:</span>
+                            <strong id="result-lucro-divisao">R$ 0,00</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
