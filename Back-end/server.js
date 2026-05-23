@@ -7,6 +7,10 @@ const { open } = require('sqlite');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.listen(PORT, () => {
+    console.log(`✅ Rodando na porta ${PORT}`);  // Render usa porta 10000
+});
+
 // Middleware
 app.use(cors());
 app.use(express.json());
